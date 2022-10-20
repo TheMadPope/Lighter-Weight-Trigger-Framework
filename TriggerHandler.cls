@@ -18,31 +18,31 @@
 public virtual class TriggerHandler {
     
     /**
-    * Boolean to bypass triggerHandler action. This can be set on instantiation, using a Custom Metadata record, for example.
-    */
+     * Boolean to bypass triggerHandler action. This can be set on instantiation, using a Custom Metadata record, for example.
+     */
     public Boolean IsDisabled { get; set; }
 
     /**
-    * Default constructor, setting IsDisabled=false 
-    */
+     * Default constructor, setting IsDisabled=false 
+     */
     public TriggerHandler() {
         IsDisabled = false;
     }
 
     /**
-    * Constructor to allow deliberate overriding of the IsDisabled boolean, which can be set by, perhaps, a Custom Metadata record.
-    * This allows the TriggerHandler action to be bypassed (during bulk loads, for example) 
-    * @param disable (boolean): If true, the Triggerhandler will not execute any actions
-    */
+     * Constructor to allow deliberate overriding of the IsDisabled boolean, which can be set by, perhaps, a Custom Metadata record.
+     * This allows the TriggerHandler action to be bypassed (during bulk loads, for example) 
+     * @param disable (boolean): If true, the Triggerhandler will not execute any actions
+     */
     public TriggerHandler(boolean disable) {
         IsDisabled = disable;
     }
 
     /**
-    * In the trigger itself, invoke a new triggerhandler extending this class, and invoke the run() method.
-    * In that triggerHandler class, override any of the virtual methods below that you want to invoke
-    * This method will fire the appropriate methods on the handler depending on the trigger context.
-    */
+     * In the trigger itself, invoke a new triggerhandler extending this class, and invoke the run() method.
+     * In that triggerHandler class, override any of the virtual methods below that you want to invoke
+     * This method will fire the appropriate methods on the handler depending on the trigger context.
+     */
     public virtual void run() {
         // Check to see if the trigger has been disabled. If it has, return
         if(IsDisabled) {
@@ -71,27 +71,27 @@ public virtual class TriggerHandler {
     }
 
     /**
-    * Action to take on After Delete action. Override in implementing class if action is desired
-    * Implementing class can use explicit sObject type name in place of SObject
-    * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
-    */
+     * Action to take on After Delete action. Override in implementing class if action is desired
+     * Implementing class can use explicit sObject type name in place of SObject
+     * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
+     */
     virtual void afterDelete(Map<Id, SObject> oldRecords) {
     }
     
     /**
-    * Action to take on After Insert action. Override in implementing class if action is desired
-    * Implementing class can use explicit sObject type name in place of SObject
-    * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
-    */
+     * Action to take on After Insert action. Override in implementing class if action is desired
+     * Implementing class can use explicit sObject type name in place of SObject
+     * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
+     */
     virtual void afterInsert(Map<Id, SObject> newRecords) {
     }
     
     /**
-    * Action to take on After Update action. Override in implementing class if action is desired
-    * Implementing class can use explicit sObject type name in place of SObject
-    * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
-    * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
-    */
+     * Action to take on After Update action. Override in implementing class if action is desired
+     * Implementing class can use explicit sObject type name in place of SObject
+     * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
+     * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
+     */
     virtual void afterUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
     
@@ -113,19 +113,19 @@ public virtual class TriggerHandler {
     }
 
     /**
-    * Action to take on Before Insert action. Override in implementing class if action is desired
-    * Implementing class can use explicit sObject type name in place of SObject
-    * @param newRecords (SObject[]): Array of new records before insert
-    */
+     * Action to take on Before Insert action. Override in implementing class if action is desired
+     * Implementing class can use explicit sObject type name in place of SObject
+     * @param newRecords (SObject[]): Array of new records before insert
+     */
     virtual void beforeInsert(SObject[] newRecords) {
     }
 
     /**
-    * Action to take on Before Update action. Override in implementing class if action is desired
-    * Implementing class can use explicit sObject type name in place of SObject
-    * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
-    * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
-    */
+     * Action to take on Before Update action. Override in implementing class if action is desired
+     * Implementing class can use explicit sObject type name in place of SObject
+     * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
+     * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
+     */
     virtual void beforeUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
 }
