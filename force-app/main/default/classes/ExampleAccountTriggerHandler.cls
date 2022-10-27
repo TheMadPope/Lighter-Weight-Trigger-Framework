@@ -27,7 +27,7 @@ public class ExampleAccountTriggerHandler extends TriggerHandler {
      * Should invoke a Service class to do actual work, keep any logic out of the Handler
      * @param newRecords (List<SObject>): Records that will be inserted, from the Context.
      */
-    public void beforeInsert(List<SObject> newRecords) {
+    public override void beforeInsert(List<SObject> newRecords) {
         system.debug('Overridden Before Insert action.');
     }
 }
