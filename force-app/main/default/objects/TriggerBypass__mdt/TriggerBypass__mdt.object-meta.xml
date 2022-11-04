@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>This is an example implementation of bypassing trigger action via a boolean on the trigger handler class, using Custom Metadata to store settings.</description>
+    <label>Trigger Bypass</label>
+    <pluralLabel>Trigger Bypasses</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>
