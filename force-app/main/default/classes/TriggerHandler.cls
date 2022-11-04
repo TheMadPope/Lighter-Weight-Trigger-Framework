@@ -19,6 +19,7 @@ public virtual class TriggerHandler {
     
     /**
      * Boolean to bypass triggerHandler action. This can be set on instantiation, using a Custom Metadata record, for example.
+     * If not implementing, you can get rid of this.
      */
     public Boolean IsDisabled { get; set; }
 
@@ -31,7 +32,8 @@ public virtual class TriggerHandler {
 
     /**
      * Constructor to allow deliberate overriding of the IsDisabled boolean, which can be set by, perhaps, a Custom Metadata record.
-     * This allows the TriggerHandler action to be bypassed (during bulk loads, for example) 
+     * This allows the TriggerHandler action to be bypassed (during bulk loads, for example).
+     * If you are not implementing a bypass, you can get rid of this constructor.
      * @param disable (boolean): If true, the Triggerhandler will not execute any actions
      */
     public TriggerHandler(boolean disable) {
@@ -44,9 +46,9 @@ public virtual class TriggerHandler {
      * This method will fire the appropriate methods on the handler depending on the trigger context.
      */
     public virtual void run() {
-        // Check to see if the trigger has been disabled. If it has, return
+        // Check to see if the trigger has been disabled. If it has, return.
+        // NOTE: If you are not implementing a bypass, delete this check.
         if(IsDisabled) {
-            //Modify to check a custom metadata or something.
             return;
         }
 
