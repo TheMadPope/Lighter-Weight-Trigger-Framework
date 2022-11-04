@@ -19,6 +19,7 @@ public virtual class TriggerHandler {
     
     /**
      * Boolean to bypass triggerHandler action. This can be set on instantiation, using a Custom Metadata record, for example.
+     * If not implementing, you can get rid of this.
      */
     public Boolean IsDisabled { get; set; }
 
@@ -31,7 +32,8 @@ public virtual class TriggerHandler {
 
     /**
      * Constructor to allow deliberate overriding of the IsDisabled boolean, which can be set by, perhaps, a Custom Metadata record.
-     * This allows the TriggerHandler action to be bypassed (during bulk loads, for example) 
+     * This allows the TriggerHandler action to be bypassed (during bulk loads, for example).
+     * If you are not implementing a bypass, you can get rid of this constructor.
      * @param disable (boolean): If true, the Triggerhandler will not execute any actions
      */
     public TriggerHandler(boolean disable) {
@@ -44,9 +46,9 @@ public virtual class TriggerHandler {
      * This method will fire the appropriate methods on the handler depending on the trigger context.
      */
     public virtual void run() {
-        // Check to see if the trigger has been disabled. If it has, return
+        // Check to see if the trigger has been disabled. If it has, return.
+        // NOTE: If you are not implementing a bypass, delete this check.
         if(IsDisabled) {
-            //Modify to check a custom metadata or something.
             return;
         }
 
@@ -75,7 +77,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
      */
-    virtual void afterDelete(Map<Id, SObject> oldRecords) {
+    public virtual void afterDelete(Map<Id, SObject> oldRecords) {
     }
     
     /**
@@ -83,7 +85,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
      */
-    virtual void afterInsert(Map<Id, SObject> newRecords) {
+    public virtual void afterInsert(Map<Id, SObject> newRecords) {
     }
     
     /**
@@ -92,7 +94,7 @@ public virtual class TriggerHandler {
      * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
      * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
      */
-    virtual void afterUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
+    public virtual void afterUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
     
     /**
@@ -101,7 +103,7 @@ public virtual class TriggerHandler {
      * @note As of 2022-10-20 this only works for SOME standard objects: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_recovered_records.htm
      * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
      */
-    virtual void afterUndelete(Map<Id, SObject> newRecords) {
+    public virtual void afterUndelete(Map<Id, SObject> newRecords) {
     }
 
     /**
@@ -109,7 +111,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
      */
-    virtual void beforeDelete(Map<Id, SObject> oldRecords) {
+    public virtual void beforeDelete(Map<Id, SObject> oldRecords) {
     }
 
     /**
@@ -117,7 +119,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param newRecords (SObject[]): Array of new records before insert
      */
-    virtual void beforeInsert(SObject[] newRecords) {
+    public virtual void beforeInsert(SObject[] newRecords) {
     }
 
     /**
@@ -126,6 +128,6 @@ public virtual class TriggerHandler {
      * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
      * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
      */
-    virtual void beforeUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
+    public virtual void beforeUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
 }

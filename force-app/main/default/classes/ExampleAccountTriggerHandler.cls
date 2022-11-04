@@ -29,5 +29,6 @@ public class ExampleAccountTriggerHandler extends TriggerHandler {
      */
     public override void beforeInsert(List<SObject> newRecords) {
         system.debug('Overridden Before Insert action.');
+        //Call an AccountService method to do things.
     }
 }
