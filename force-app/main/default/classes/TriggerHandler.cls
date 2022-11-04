@@ -75,7 +75,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
      */
-    virtual void afterDelete(Map<Id, SObject> oldRecords) {
+    public virtual void afterDelete(Map<Id, SObject> oldRecords) {
     }
     
     /**
@@ -83,7 +83,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
      */
-    virtual void afterInsert(Map<Id, SObject> newRecords) {
+    public virtual void afterInsert(Map<Id, SObject> newRecords) {
     }
     
     /**
@@ -92,7 +92,7 @@ public virtual class TriggerHandler {
      * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
      * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
      */
-    virtual void afterUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
+    public virtual void afterUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
     
     /**
@@ -101,7 +101,7 @@ public virtual class TriggerHandler {
      * @note As of 2022-10-20 this only works for SOME standard objects: https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_triggers_recovered_records.htm
      * @param newRecords (Map<Id, SObject>): Map of records after insert, by their Ids
      */
-    virtual void afterUndelete(Map<Id, SObject> newRecords) {
+    public virtual void afterUndelete(Map<Id, SObject> newRecords) {
     }
 
     /**
@@ -109,7 +109,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param oldRecords (Map<Id, SObject>): Map of records before delete, by their Ids
      */
-    virtual void beforeDelete(Map<Id, SObject> oldRecords) {
+    public virtual void beforeDelete(Map<Id, SObject> oldRecords) {
     }
 
     /**
@@ -117,7 +117,7 @@ public virtual class TriggerHandler {
      * Implementing class can use explicit sObject type name in place of SObject
      * @param newRecords (SObject[]): Array of new records before insert
      */
-    virtual void beforeInsert(SObject[] newRecords) {
+    public virtual void beforeInsert(SObject[] newRecords) {
     }
 
     /**
@@ -126,6 +126,6 @@ public virtual class TriggerHandler {
      * @param oldRecords (Map<Id, SObject>): Map of records before update, by their Ids
      * @param newRecords (Map<Id, SObject>): Map of records after update, by their Ids
      */
-    virtual void beforeUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
+    public virtual void beforeUpdate(Map<Id, SObject> oldRecords, Map<Id, SObject> newRecords) {
     }
 }
