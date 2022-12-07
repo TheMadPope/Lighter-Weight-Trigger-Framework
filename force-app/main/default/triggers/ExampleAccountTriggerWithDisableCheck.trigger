@@ -20,5 +20,4 @@ trigger ExampleAccountTriggerWithDisableCheck on Account (
      **/
     ExampleAccountTriggerHandler handler = new ExampleAccountTriggerHandler(TriggerService.isBypassEnabled('ExampleAccountTriggerHandler'));
     handler.run();
-    System.debug('I am disabled, invoking run() returned early and I took no action!!!');
 }
