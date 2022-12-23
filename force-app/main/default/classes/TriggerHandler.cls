@@ -57,13 +57,13 @@ public virtual class TriggerHandler {
             when BEFORE_INSERT {
                 beforeInsert(trigger.new);
             } when BEFORE_UPDATE {
-                beforeUpdate(trigger.newMap, trigger.oldMap);
+                beforeUpdate(trigger.oldMap, trigger.newMap);
             } when BEFORE_DELETE {
                 beforeDelete(trigger.oldMap);
             } when AFTER_INSERT {
                 afterInsert(Trigger.newMap);
             } when AFTER_UPDATE {
-                afterUpdate(trigger.newMap, trigger.oldMap);
+                afterUpdate(trigger.oldMap, trigger.newMap);
             } when AFTER_DELETE {
                 afterDelete(trigger.oldMap);
             } when AFTER_UNDELETE {
