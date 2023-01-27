@@ -117,9 +117,9 @@ public virtual class TriggerHandler {
     /**
      * Action to take on Before Insert action. Override in implementing class if action is desired
      * Implementing class can use explicit sObject type name in place of SObject
-     * @param newRecords (SObject[]): Array of new records before insert
+     * @param newRecords (List<SObject>): Array of new records before insert
      */
-    public virtual void beforeInsert(SObject[] newRecords) {
+    public virtual void beforeInsert(List<SObject> newRecords) {
     }
 
     /**
