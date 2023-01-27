@@ -4,7 +4,7 @@
  *               Ignore any events that you do not need, as if you do not override them, nothing happens (via the default virtual method).
  *               In the Trigger itself, register on EVERY step, and invoke triggerHandler.Run(), e.g.:
  * 
- * trigger ExampleTrigger on Contact (before insert, after insert, before update, after udpate, before delete, after delete) {
+ * trigger ExampleTrigger on Contact (before insert, after insert, before update, after update, before delete, after delete) {
  *    ContactTriggerHandler handler = new ContactTriggerHandler();
  *    handler.Run();
  * }
