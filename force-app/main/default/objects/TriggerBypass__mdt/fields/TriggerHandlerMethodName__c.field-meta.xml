@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TriggerHandlerMethodName__c</fullName>
+    <caseSensitive>false</caseSensitive>
+    <description>The name of the trigger handler and method to bypass (or not).
+Recommended naming convention: [TriggerHandlerClasss].[MethodName], e.g., AccountTriggerHandler.afterUpdate
+Note that this field is 255 characters, to account for a possible future change in maximum length allowed by Salesforce.</description>
+    <externalId>false</externalId>
+    <fieldManageability>SubscriberControlled</fieldManageability>
+    <inlineHelpText>The name of the trigger handler and method to bypass (or not).
+Recommended naming convention: [TriggerHandlerClasss].[MethodName], e.g., AccountTriggerHandler.afterUpdate</inlineHelpText>
+    <label>TriggerHandlerMethodName</label>
+    <length>255</length>
+    <required>true</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

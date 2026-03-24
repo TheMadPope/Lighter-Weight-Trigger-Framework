@@ -9,12 +9,12 @@ public class TriggerService {
      * Calls inner method for common functionality using dependency injection
      * @param triggerHandlerName (String): Name of the trigger handler class
      * @return boolean: TRUE if disabled
- * @created 2022-11-04: Richard Moore
+ 	 * @created 2022-11-04: Richard Moore
      */
-    public static boolean isBypassEnabled(String triggerHandlerName){
+    public static boolean isBypassEnabled(String triggerHandlerMethodName){
         TriggerBypass__mdt bypassRecord = [SELECT Id, Bypass__c
                                            FROM TriggerBypass__mdt
-                                           WHERE TriggerHandlerName__c =:triggerHandlername
+                                           WHERE TriggerHandlerMethodName__c =:triggerHandlerMethodName
                                            LIMIT 1];
         return isBypassEnabled(bypassRecord);
     }

@@ -18,6 +18,5 @@ trigger ExampleAccountTrigger on Account (
      * 
      * Best practice would be to have only one trigger per sObject per package (or one per org, if not making a package).
      **/
-    ExampleAccountTriggerHandler handler = new ExampleAccountTriggerHandler();
-    handler.run();
+    new ExampleAccountTriggerHandler().run();
 }
