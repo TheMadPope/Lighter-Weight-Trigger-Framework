@@ -1,3 +1,4 @@
 /.sfdx
 /.sf
 *.profile-meta.xml
+/.vscode
